@@ -1,39 +1,17 @@
-// import React from 'react';
+import React, { FC, Suspense } from 'react';
+import { Provider } from 'react-redux';
 
-// interface IProperties {
-//   name: string;
-//   age: number;
-// }
-
-// function App(properties: IProperties) {
-//   const { name, age } = properties;
-//   return (
-//     <div className='app'>
-//       <span>{`Hello! I'm ${name}, ${age} years old.`}</span>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import React, { lazy, Suspense } from 'react';
 import PageLoading from 'components/Loading';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import store from './store';
 
-const OutLayout = lazy(() => import('layouts/OutLayout'));
-const InnerLayout = lazy(() => import('layouts/InnerLayout'));
+import Routes from './router';
 
-function App() {
-  return (
-    <Router>
-      <Suspense fallback={<PageLoading />}>
-        <Switch>
-          <Route path='/user' component={OutLayout} />
-          <Route path='/' component={InnerLayout} />
-        </Switch>
-      </Suspense>
-    </Router>
-  );
-}
+const App: FC = () => (
+  <Suspense fallback={<PageLoading />}>
+    <Provider store={store}>
+      <Routes />
+    </Provider>
+  </Suspense>
+);
 
 export default App;

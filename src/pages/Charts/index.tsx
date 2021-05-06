@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Charts = () => <div>Charts</div>;
+import './index.less';
+
+const Charts = () => <div className='charts'>Charts</div>;
 
 export default Charts;

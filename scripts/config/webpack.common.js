@@ -183,18 +183,18 @@ module.exports = {
             loader: 'less-loader',
             options: {
               sourceMap: isDev,
-              // lessOptions: {
-              //   javascriptEnabled: true,
-              // },
               lessOptions: {
-                // 如果使用less-loader@5，请移除 lessOptions 这一级直接配置选项。
-                modifyVars: {
-                  'primary-color': '#05c494',
-                  'link-color': '#05c494',
-                  'border-radius-base': '2px',
-                },
                 javascriptEnabled: true,
               },
+              // lessOptions: {
+              //   // 如果使用less-loader@5，请移除 lessOptions 这一级直接配置选项。
+              //   modifyVars: {
+              //     'primary-color': '#05c494',
+              //     'link-color': '#05c494',
+              //     'border-radius-base': '2px',
+              //   },
+              //   javascriptEnabled: true,
+              // },
             },
           },
         ],

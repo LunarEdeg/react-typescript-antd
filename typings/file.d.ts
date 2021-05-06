@@ -27,3 +27,5 @@ declare module '*.png' {
   const path: string;
   export default path;
 }
+
+type CommonObjectType<T = any> = Record<string, T>;

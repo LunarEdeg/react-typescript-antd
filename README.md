@@ -1,13 +1,13 @@
 ## 项目简介
 
-    基于React+AntD+TypeScript的后台管理系统
+    基于React+AntD+TypeScript的后台系统脚手架。支持docker镜像部署。
 
 ## 技术依赖
 
-- React
+- React17
 - Ant-Design
 - TypeScript
-- Webpack
+- Webpack5
 - axios
 - less
 

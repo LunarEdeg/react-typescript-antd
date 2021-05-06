@@ -11,9 +11,8 @@ const Login: React.FC = () => {
   const [form] = Form.useForm();
   const history = useHistory();
 
-  const handleSubmit = (v: any) => {
-    console.log(v);
-    history.replace('/');
+  const handleSubmit = () => {
+    history.replace('/dashboard');
   };
 
   const onReset = () => {
@@ -25,6 +24,12 @@ const Login: React.FC = () => {
     wrapperCol: { span: 16 },
   };
 
+  const tailLayout = {
+    wrapperCol: { offset: 8, span: 16 },
+  };
+
+  // const floatColor = theme === 'default' ? '24,144,255' : '110,65,255'
+
   return (
     <div className='user-login'>
       <div className='user-login__title'>大地管理系统</div>
@@ -35,10 +40,7 @@ const Login: React.FC = () => {
         <Item name='password' label='密码：' rules={[{ required: true, message: '密码不能为空' }]}>
           <Input placeholder='请输入密码' prefix={<LockOutlined style={{ color: 'rgba(0,0,0,.25)' }} />} />
         </Item>
-        <Item name='captcha' label='验证码：' rules={[{ required: true, message: '验证码不能为空' }]}>
-          <Input placeholder='请输入验证码' prefix={<LockOutlined style={{ color: 'rgba(0,0,0,.25)' }} />} />
-        </Item>
-        <Item>
+        <Item {...tailLayout}>
           <Button type='primary' htmlType='submit'>
             登录
           </Button>
